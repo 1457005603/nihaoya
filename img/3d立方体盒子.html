@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 1500px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        section {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 150px auto;
+            /* transform: rotate3d(1, 1, 0, -45deg); */
+            transform-style: preserve-3d;
+            animation: goudan 2s linear infinite;
+        }
+        
+        @keyframes goudan {
+            0% {}
+            100% {
+                transform: rotateY( 360deg);
+            }
+        }
+        
+        section div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+            line-height: 300px;
+            text-align: center;
+            opacity: .5;
+            color: #fff;
+        }
+        
+        section div:nth-child(1) {
+            background: red;
+            transform: translateZ(150px);
+        }
+        
+        section div:nth-child(2) {
+            background: #f60;
+            transform: translateZ(-150px) rotateY(180deg);
+        }
+        
+        section div:nth-child(3) {
+            background: green;
+            transform: translateX(-150px) rotateY(-90deg);
+        }
+        
+        section div:nth-child(4) {
+            background: plum;
+            transform: translateX(150px) rotateY(90deg);
+        }
+        
+        section div:nth-child(5) {
+            background: brown;
+            transform: translateY(-150px) rotateX(90deg);
+        }
+        
+        section div:nth-child(6) {
+            background: yellowgreen;
+            transform: translateY(150px) rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>前</div>
+        <div>后</div>
+        <div>左</div>
+        <div>右</div>
+        <div>上</div>
+        <div>下</div>
+    </section>
+</body>
+
+</html>ewsd
